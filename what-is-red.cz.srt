@@ -1,0 +1,3185 @@
+1
+00:00:10,593 --> 00:00:14,410
+Nyní promluví Nenad Rakocevic
+
+2
+00:00:14,410 --> 00:00:17,039
+od kterého se dovíme "Co je to Red"
+
+3
+00:00:17,039 --> 00:00:22,496
+(potlesk)
+
+4
+00:00:22,886 --> 00:00:27,767
+Díky, Gregu. A děkuji také všem
+
+5
+00:00:27,767 --> 00:00:31,908
+kteří přispěli na pokrytí nákladů
+
+6
+00:00:31,908 --> 00:00:33,728
+mojí cesty sem.
+
+7
+00:00:33,728 --> 00:00:36,932
+Už jsem dělal spoustu prezentací o Redu
+
+8
+00:00:36,932 --> 00:00:43,013
+ale spousta nováčků se mě pořád ptá
+
+9
+00:00:43,013 --> 00:00:45,517
+na jednoduchou věc:
+
+10
+00:00:45,517 --> 00:00:47,400
+"Co je to Red?"
+
+11
+00:00:47,400 --> 00:00:50,166
+protože tento projekt má to tolik aspektů,
+
+12
+00:00:50,166 --> 00:00:51,741
+tak je plně chápu.
+
+13
+00:00:51,741 --> 00:00:54,042
+Proto se v této prezentaci pokusím
+
+14
+00:00:54,042 --> 00:00:58,673
+poskytnout přehled každé části projektu.
+
+15
+00:00:58,673 --> 00:01:02,522
+Takže začněme přehledem problému.
+
+16
+00:01:02,522 --> 00:01:06,517
+Tohle není fotka mých mozkových buněk,
+
+17
+00:01:06,517 --> 00:01:10,566
+jde o počítačově zpracovaný model
+
+18
+00:01:10,566 --> 00:01:12,772
+známého vesmíru.
+
+19
+00:01:12,772 --> 00:01:14,740
+To by vám mohlo přiblížit
+
+20
+00:01:14,740 --> 00:01:18,230
+měřítko našeho problému (smích)
+
+21
+00:01:18,230 --> 00:01:20,329
+A vlastně tím narážím na to,
+
+22
+00:01:20,329 --> 00:01:23,036
+čím jsem se měl původně stát,
+
+23
+00:01:23,036 --> 00:01:26,011
+neboť dříve jsem studoval astrofyziku
+
+24
+00:01:26,011 --> 00:01:30,570
+a na vysoké škole jsem přešel na informatiku.
+
+25
+00:01:30,570 --> 00:01:34,589
+Můj pohled na svět výpočetní techniky je ten,
+
+26
+00:01:34,589 --> 00:01:38,792
+že i dnes neustále používáme
+
+27
+00:01:38,792 --> 00:01:41,018
+primitivní nástroje..
+
+28
+00:01:41,018 --> 00:01:44,653
+Takže v software se zas tak nelišíme
+
+29
+00:01:44,653 --> 00:01:46,357
+od těchto dvou chlapů.
+
+30
+00:01:46,357 --> 00:01:49,283
+Všechno děláme velice primitivně,
+
+31
+00:01:49,283 --> 00:01:51,928
+neboť dokola objevujeme Ameriku
+
+32
+00:01:51,928 --> 00:01:54,513
+a opakujeme ty samé chyby
+
+33
+00:01:54,513 --> 00:01:56,041
+pořád dokola.
+
+34
+00:01:56,041 --> 00:01:58,892
+Umělá inteligence se nám bude smát.
+So AI will be laughing.
+
+35
+00:01:58,902 --> 00:02:02,541
+Aspoň doufám :-) (smích)
+
+36
+00:02:02,541 --> 00:02:08,308
+Vraťme se k tématu;
+
+37
+00:02:08,308 --> 00:02:12,563
+existuje spousta různých programovacích jazyků.
+
+38
+00:02:12,563 --> 00:02:14,927
+Podívejme se na jejich seznam na Wikipedii,
+
+39
+00:02:14,927 --> 00:02:18,596
+a tohle jsou pouze ty na A
+
+40
+00:02:18,596 --> 00:02:23,107
+a seznam ani není kompletní.
+
+41
+00:02:23,107 --> 00:02:24,802
+Takže máme doslova tisíce
+
+42
+00:02:24,802 --> 00:02:27,188
+programovacích jazyků.
+
+43
+00:02:27,188 --> 00:02:29,588
+Když se podíváte, uvidíte některé jazyky,
+
+44
+00:02:29,588 --> 00:02:32,839
+které byly vytvořeny na Amize.
+
+45
+00:02:32,839 --> 00:02:34,465
+Slavné "Amiga E"
+
+46
+00:02:34,465 --> 00:02:37,288
+a AMOS, který vytvořil jeden Francouz...
+
+47
+00:02:37,288 --> 00:02:42,988
+velice inteligentní člověk, François Lionet.
+
+48
+00:02:42,988 --> 00:02:46,500
+AMOS Basic měl vlastní DSL.
+
+49
+00:02:46,500 --> 00:02:50,240
+Je to jazyk, se kterým jsem pracoval
+
+50
+00:02:50,240 --> 00:02:52,899
+před více jak dvaceti lety.
+
+51
+00:02:52,899 --> 00:02:56,445
+Tento DSL byl určen pro animace
+
+52
+00:02:56,445 --> 00:03:00,268
+a byl kompilován do strojového kódu.
+
+53
+00:03:00,268 --> 00:03:04,439
+A celý interpreter, kompiler a IDE
+
+54
+00:03:04,439 --> 00:03:10,624
+pro AMOS byly napsány plně v assembleru.
+
+55
+00:03:10,624 --> 00:03:15,262
+A tento člověk mě velice inspiroval.
+
+56
+00:03:15,262 --> 00:03:19,448
+Ačkoliv máme tolik programovacích jazyků
+
+57
+00:03:19,448 --> 00:03:22,985
+a nástrojů, pořád hledáme novější
+
+58
+00:03:22,985 --> 00:03:25,197
+a lepší řešení.
+
+59
+00:03:25,197 --> 00:03:28,035
+Softwarové problémy, se kterými se denně potýkáme
+
+60
+00:03:28,035 --> 00:03:31,225
+jsou dnes velice dobře známy,
+
+61
+00:03:31,225 --> 00:03:34,345
+přesto jsme se jich zatim nezbavili.
+
+62
+00:03:34,345 --> 00:03:37,582
+Jako narůstající složitost, bloatware...
+
+63
+00:03:37,582 --> 00:03:40,334
+Samozřejmě nemyslím Javu (smích)
+
+64
+00:03:40,334 --> 00:03:42,225
+Rozhodně ne Java :-P
+
+65
+00:03:42,225 --> 00:03:44,769
+Nízký výkon, černé skříňky, jako například
+
+66
+00:03:44,769 --> 00:03:46,554
+software s uzavřeným zdrojovým kódem.
+
+67
+00:03:46,554 --> 00:03:49,598
+Což je často problém, pokud se snažíte
+
+68
+00:03:49,598 --> 00:03:53,461
+vyřešit bugy, ke terým se nemáte jak dostat.
+
+69
+00:03:53,461 --> 00:03:57,872
+Místo řešení těchto problémů
+
+70
+00:03:57,872 --> 00:04:00,348
+bychom se měli při programování bavit,
+
+71
+00:04:00,348 --> 00:04:02,665
+protože programování je především zábava.
+
+72
+00:04:02,665 --> 00:04:05,265
+A takhle bychom měli uvažovat,
+
+73
+00:04:05,265 --> 00:04:07,852
+když jsme u počítače a pracujeme na něm.
+
+74
+00:04:07,852 --> 00:04:11,400
+Jako dřív, když programování
+
+75
+00:04:11,400 --> 00:04:13,440
+byla *jenom* zábava.
+
+76
+00:04:13,440 --> 00:04:16,441
+Od té doby, od osmdesátých let,
+
+77
+00:04:16,441 --> 00:04:19,490
+se hodně změnilo.
+
+78
+00:04:19,490 --> 00:04:21,716
+V současnosti čelíme -- řekl bych --
+
+79
+00:04:21,716 --> 00:04:25,710
+dvěma velice důležitým změnám v IT.
+
+80
+00:04:25,710 --> 00:04:28,281
+První z nich je zvýšení výpočetní síly
+
+81
+00:04:28,281 --> 00:04:31,224
+navyšováním počtu jader
+
+82
+00:04:31,224 --> 00:04:34,934
+namísto zvyšování frekvence CPU.
+
+83
+00:04:34,934 --> 00:04:39,320
+Což má obrovský vliv na programovací nástroje.
+
+84
+00:04:39,320 --> 00:04:44,062
+Další důležitou revolucí, která právě probíhá,
+
+85
+00:04:44,062 --> 00:04:46,772
+je přechod k mobilním zařízením.
+
+86
+00:04:46,772 --> 00:04:49,987
+Trh se mění velice rychle.
+
+87
+00:04:49,987 --> 00:04:52,947
+A proto je potřeba, aby se změnily i naše nástroje.
+
+88
+00:04:52,947 --> 00:04:56,540
+Ale, navzdory těmto změnám
+
+89
+00:04:56,540 --> 00:04:59,593
+ve skutečnosti používáme ty samé nástroje.
+
+90
+00:04:59,593 --> 00:05:03,677
+Takže jsem vzal pět nejpopulárnějších jazyků
+
+91
+00:05:03,677 --> 00:05:07,004
+z TIOBE.com,
+
+92
+00:05:07,004 --> 00:05:09,111
+renomovaného indexu.
+
+93
+00:05:09,111 --> 00:05:12,114
+Jasně, C je neustále hlavní
+
+94
+00:05:12,114 --> 00:05:14,672
+a je tu s námi bezmála čtyřicet let.
+
+95
+00:05:14,672 --> 00:05:18,748
+Což jsou v IT věky!
+
+96
+00:05:18,748 --> 00:05:22,984
+A C rozhodně nebylo navrženo
+
+97
+00:05:22,984 --> 00:05:25,417
+k řešení současných problémů.
+
+98
+00:05:25,417 --> 00:05:27,973
+A pokud se podíváte na ostatní jazyky,
+
+99
+00:05:27,973 --> 00:05:30,784
+jde o víceméně totéž.
+
+100
+00:05:30,784 --> 00:05:33,205
+Naštěstí, někteří lidé,
+
+101
+00:05:33,205 --> 00:05:36,211
+někteří vyjímeční lidé si to uvědomují
+
+102
+00:05:36,211 --> 00:05:41,981
+a jsou schopni tyto problémy řešit.
+
+103
+00:05:41,981 --> 00:05:45,129
+Lidé jako Carl (pokyne ke Carlu Sassenrathovi),
+
+104
+00:05:45,129 --> 00:05:47,309
+který vymyslel Rebol... úžasný nástroj.
+
+105
+00:05:47,309 --> 00:05:50,383
+Pravděpodobně jeden z nejvýznamnějších pokroků
+
+106
+00:05:50,383 --> 00:05:55,080
+v programování za posledních dvacet let.
+
+107
+00:05:55,080 --> 00:05:57,875
+Takže Rebol řešil, velice dobře řešil
+
+108
+00:05:57,875 --> 00:06:00,598
+velkou spoustu problémů.
+
+109
+00:06:00,598 --> 00:06:01,978
+*Ale ne všechny.*
+
+110
+00:06:01,978 --> 00:06:05,352
+Ráb bych Carlovi něco ukázal...
+
+111
+00:06:05,352 --> 00:06:08,556
+...možná to ještě neviděl?
+
+112
+00:06:08,556 --> 00:06:12,917
+Zázraky Rebolu, až donedávna,
+
+113
+00:06:12,917 --> 00:06:17,277
+to byla komunita kolem, která Rebol vychvalovala
+
+114
+00:06:17,277 --> 00:06:20,004
+a snažila se lidem vysvětlit
+
+115
+00:06:20,004 --> 00:06:23,947
+výstižnost a výkonost Rebolu.
+
+116
+00:06:23,947 --> 00:06:28,282
+Nedávno se objevila vědecká studie, která se snažila
+
+117
+00:06:28,282 --> 00:06:32,133
+porovnat výstižnost programovacích jazyku.
+
+118
+00:06:32,133 --> 00:06:37,597
+A Rebol... *překvapení* ...skončil jako třetí.
+
+119
+00:06:37,597 --> 00:06:41,516
+První a druhé místo byly specializované DSL.
+
+120
+00:06:41,516 --> 00:06:44,526
+akže kdo byl vlastně první? (smích)
+
+121
+00:06:44,526 --> 00:06:49,040
+Což jen potvrzuje,
+
+122
+00:06:49,040 --> 00:06:51,141
+co jsme už dávno věděli.
+
+123
+00:06:51,141 --> 00:06:53,307
+Rebol je velice výkoný nástroj,
+
+124
+00:06:53,307 --> 00:06:55,935
+což bylo nyní vědecky prokázáno. (smích)
+
+125
+00:06:55,935 --> 00:07:00,715
+Ale Red se snaží jít dál, než Rebol.
+
+126
+00:07:00,715 --> 00:07:03,002
+Hlavně, pokud jde o implementaci,
+
+127
+00:07:03,002 --> 00:07:06,519
+nikoliv v sémantice a syntaxi.
+
+128
+00:07:06,519 --> 00:07:10,458
+Ale spíše v nástrojích, implementaci
+
+129
+00:07:10,458 --> 00:07:13,065
+a v rozšíření.
+
+130
+00:07:13,065 --> 00:07:16,160
+Takže, co je to vlastně Red?
+
+131
+00:07:16,160 --> 00:07:17,653
+Red je to, čemu říkám
+
+132
+00:07:17,653 --> 00:07:19,212
+*programovací jazyk s plným záběrem*
+
+133
+00:07:19,212 --> 00:07:22,317
+Možná jste slyšeli o vývojářich s plným záběrem?
+
+134
+00:07:22,317 --> 00:07:25,796
+Takže toto je jazyk s plným záběrem.
+
+135
+00:07:25,796 --> 00:07:28,995
+A pravděpodobně nejdůležitější vlastností je,
+
+136
+00:07:28,995 --> 00:07:31,188
+že jde o skutečně univerzální
+
+137
+00:07:31,188 --> 00:07:33,287
+programovací řešení.
+
+138
+00:07:33,287 --> 00:07:35,182
+Existuje spousta programovacích jazyků,
+
+139
+00:07:35,182 --> 00:07:39,288
+které o sobě *tvrdí*, že jsou univerzální...
+
+140
+00:07:39,288 --> 00:07:43,358
+...ovšem ne v takovém záběru, jako Red.
+
+141
+00:07:43,358 --> 00:07:47,121
+Další skvělou vlastností Redu
+
+142
+00:07:47,121 --> 00:07:49,413
+jsou jeho samostatné nástroje,
+
+143
+00:07:49,413 --> 00:07:52,050
+díky čemuž jsme nezávislí
+
+144
+00:07:52,050 --> 00:07:56,488
+na běžných C-nástrojích, máme vlastní.
+
+145
+00:07:56,488 --> 00:07:59,648
+Další důležitou vlastností Redu
+
+146
+00:07:59,648 --> 00:08:01,421
+je *svoboda*.
+
+147
+00:08:01,421 --> 00:08:03,695
+Mojí havní motivací, již od začátku,
+
+148
+00:08:03,695 --> 00:08:07,334
+bylo zbavit se všech omezení
+
+149
+00:08:07,334 --> 00:08:08,995
+a všech hranic.
+
+150
+00:08:08,995 --> 00:08:14,230
+Rád bych, aby se uživatelé Redu cítili stejně.
+
+151
+00:08:14,230 --> 00:08:18,165
+Takže, Red je velice jednoduchý, *díky Rebolu*...
+
+152
+00:08:18,165 --> 00:08:23,770
+...ale Red nemá žádná umělá omezení.
+
+153
+00:08:23,770 --> 00:08:26,374
+Snažíme se vyřešit všechny možné potřeby
+
+154
+00:08:26,374 --> 00:08:28,138
+a všechny jejich aspekty,takže Red může být nasazen,
+
+155
+00:08:28,138 --> 00:08:33,154
+či portován na každou platformu, kterou potřebujeme.
+
+156
+00:08:33,154 --> 00:08:35,799
+Navíc, což je v programování velice důležitá věc:
+
+157
+00:08:35,799 --> 00:08:39,061
+potřebujete mít pocit, že svoje nástroje ovládáte.
+
+158
+00:08:39,061 --> 00:08:42,836
+Často pracujete s nějakými nástroji,
+
+159
+00:08:42,836 --> 00:08:44,878
+které mohou být velice výkonné, ale neovládáte je,
+
+160
+00:08:44,878 --> 00:08:47,250
+protože netušíte, co se děje uvnitř.
+
+161
+00:08:47,250 --> 00:08:48,730
+Často jsou to černé skřínky.
+
+162
+00:08:48,730 --> 00:08:52,495
+Nebo sedíte před hroznou spoustou vrstev software,
+
+163
+00:08:52,495 --> 00:08:56,225
+kdy vůbec nemůžete vědět,
+
+164
+00:08:56,225 --> 00:08:57,921
+co se děje uvnitř.
+
+165
+00:08:57,921 --> 00:09:02,394
+A poslední důležitá věc :-)
+
+166
+00:09:02,394 --> 00:09:04,521
+je *sranda*. Ano, chce zpátky zábavu.
+
+167
+00:09:04,521 --> 00:09:08,808
+Někteří z těch, co zkusili Red nebo Red/System,
+
+168
+00:09:08,808 --> 00:09:11,465
+poté, co úspěšně zkompilovali a spustili
+
+169
+00:09:11,465 --> 00:09:14,262
+svůj první program,
+
+170
+00:09:14,262 --> 00:09:16,175
+se mně ozvali s tím, že:
+
+171
+00:09:16,175 --> 00:09:17,367
+"Je to skvělé, protože je to zábava."
+
+172
+00:09:17,367 --> 00:09:21,281
+"Zkusil jsem to, fungovalo to a je to super."
+
+173
+00:09:21,281 --> 00:09:25,132
+Lidi to baví -- to, o čem jsem mluvil.
+
+174
+00:09:25,132 --> 00:09:27,620
+Ta osmdesátková nálada.
+
+175
+00:09:27,620 --> 00:09:29,347
+Že skutečně ovládáte
+
+176
+00:09:29,347 --> 00:09:31,121
+svoje programovací nástroje.
+
+177
+00:09:31,121 --> 00:09:34,387
+Takže teď se pokusím vysvětlit, co myslím
+
+178
+00:09:34,387 --> 00:09:36,782
+"programovacím jazykem s plým záběrem" a
+
+179
+00:09:36,782 --> 00:09:40,455
+"Skutečně všeobecným programovacím jazykem."
+
+180
+00:09:40,455 --> 00:09:42,096
+Uděllal jsem tento graf:
+
+181
+00:09:42,096 --> 00:09:43,414
+"Rozsah využitelnosti"
+
+182
+00:09:43,414 --> 00:09:46,570
+pro pár z nejrozšířenějších programovacích jazyků.
+
+183
+00:09:46,570 --> 00:09:49,393
+Například assembler je vhodný pro ovladače
+
+184
+00:09:49,393 --> 00:09:52,019
+a opravdu low-level kód.
+
+185
+00:09:52,019 --> 00:09:54,895
+Jak můžete vidět, Java je velmi omezená
+
+186
+00:09:54,895 --> 00:09:58,084
+ve zvládání různých úrovní abstrakce.
+
+187
+00:09:58,084 --> 00:10:00,607
+Ruby má poměrně široký záběr,
+
+188
+00:10:00,607 --> 00:10:02,989
+možná ale nejde až dolů, na systémovovu úroveň?
+
+189
+00:10:02,989 --> 00:10:05,598
+Nevím, jestli je Ruby rozhraní
+
+190
+00:10:05,598 --> 00:10:09,888
+pro volání OS API tak dobré, nebo ne.
+
+191
+00:10:09,888 --> 00:10:13,324
+Rebol má velmi široký záběr.
+
+192
+00:10:13,324 --> 00:10:16,880
+Rascal je velice zvláštní programovací jazyk.
+
+193
+00:10:16,880 --> 00:10:19,540
+Je to vlastně DSL,
+
+194
+00:10:19,540 --> 00:10:23,246
+určené k psaní dalších DSL.
+
+195
+00:10:23,246 --> 00:10:26,522
+Takže se nachází na meta-DSL úrovni.
+
+196
+00:10:26,522 --> 00:10:30,356
+A kde se nachází Red?
+
+197
+00:10:30,356 --> 00:10:33,954
+Red se snaží pokrýt všechny tyto potřeby
+
+198
+00:10:33,954 --> 00:10:37,272
+zespoda až nahoru.
+
+199
+00:10:37,272 --> 00:10:40,596
+Protože nechci být závislý na jiných nástrojích.
+
+200
+00:10:40,596 --> 00:10:43,056
+Chci, aby Red, jako programovací jazyk,
+
+201
+00:10:43,056 --> 00:10:45,913
+řešil všechny problémy a potřeby
+
+202
+00:10:45,913 --> 00:10:48,272
+bez závislosti, na čemkoliv jiném.
+
+203
+00:10:48,272 --> 00:10:51,236
+Můžete mně namítnout, že je nemožné
+
+204
+00:10:51,236 --> 00:10:53,307
+vtvořit jazyk, který pokrývá
+
+205
+00:10:53,307 --> 00:10:56,058
+tak širokou oblast.
+
+206
+00:10:56,058 --> 00:10:58,201
+A budete mít pravdu.
+
+207
+00:10:58,201 --> 00:11:00,771
+Ale Red má eso v rukávu.
+
+208
+00:11:00,771 --> 00:11:04,418
+Red/System pokrývá spodní vrstvy
+
+209
+00:11:04,418 --> 00:11:06,604
+a Red ty vrchní.
+
+210
+00:11:06,604 --> 00:11:10,037
+Jsou provázané
+
+211
+00:11:10,037 --> 00:11:11,702
+a spolupracují.
+
+212
+00:11:11,702 --> 00:11:15,114
+Red/System je dialekt Redu.
+
+213
+00:11:15,114 --> 00:11:17,191
+Můžete ho používat zvlášť,
+
+214
+00:11:17,191 --> 00:11:20,112
+nebo přímo v Redu.
+
+215
+00:11:20,112 --> 00:11:25,446
+Takže se podívejme na podporované platformy.
+
+216
+00:11:25,446 --> 00:11:26,597
+Na počítačích,
+
+217
+00:11:26,597 --> 00:11:30,755
+podporujeme tři hlavní hráče.
+
+218
+00:11:30,755 --> 00:11:34,424
+Podporujeme i další systémy,
+
+219
+00:11:34,424 --> 00:11:36,693
+jako například Syllable.
+
+220
+00:11:36,693 --> 00:11:38,829
+Rádi bychom podporovali FreeBSD,
+
+221
+00:11:38,829 --> 00:11:41,350
+ale máme nějaké low-level problémy
+
+222
+00:11:41,350 --> 00:11:45,053
+a žádného experta na FreeBSD,
+
+223
+00:11:45,053 --> 00:11:48,456
+který by je vyřešil, takže to zatím stojí.
+
+224
+00:11:48,456 --> 00:11:52,454
+Ale nejspíš bychom mohli převést Red
+
+225
+00:11:52,454 --> 00:11:54,855
+na FreeBSD poměrně rychle.
+
+226
+00:11:54,855 --> 00:11:57,687
+Dále chceme pokrýt
+
+227
+00:11:57,687 --> 00:12:00,774
+přenosná zařízení, počínaje Androidem,
+
+228
+00:12:00,774 --> 00:12:02,771
+který již podporujeme.
+
+229
+00:12:02,771 --> 00:12:04,787
+Další krok je iOS.
+
+230
+00:12:04,787 --> 00:12:07,905
+Už fungujeme na Raspberry Pi,
+
+231
+00:12:07,905 --> 00:12:10,367
+jež se stává čím dál tím populárnějším.
+
+232
+00:12:10,367 --> 00:12:14,720
+Předpokládám, že Bo předvede,
+
+233
+00:12:14,720 --> 00:12:17,929
+patrně zítra, nějaké ukázky.
+
+234
+00:12:17,929 --> 00:12:22,868
+Dále máme experimentání port na Arduino.
+
+235
+00:12:22,868 --> 00:12:27,030
+Začali jsme s osmibitovým AVR.
+
+236
+00:12:27,030 --> 00:12:30,044
+Ale to jsou zatím jen experimenty,
+
+237
+00:12:30,044 --> 00:12:32,895
+neboť se objevují další desky,
+
+238
+00:12:32,895 --> 00:12:36,014
+32-bitové, nebo Raspberry Pi.
+
+239
+00:12:36,014 --> 00:12:41,790
+Takže 8-bitová podpora teď asi není nejdůležitější.
+
+240
+00:12:41,790 --> 00:12:45,320
+Radí bychom také podporovali virtuální stroje.
+
+241
+00:12:45,320 --> 00:12:49,753
+Chceme propojení na .NET,
+
+242
+00:12:49,753 --> 00:12:53,139
+na JVM a do JavaScriptu.
+
+243
+00:12:53,139 --> 00:12:55,602
+Jsou zde dva způsoby,
+
+244
+00:12:55,602 --> 00:12:56,467
+jak toho dosáhnout.
+
+245
+00:12:56,467 --> 00:13:00,940
+Můžeme udělat přemostění, nechat Red, jak je
+
+246
+00:13:00,940 --> 00:13:06,438
+a napojit se na virtuální stroje.
+
+247
+00:13:06,438 --> 00:13:08,746
+Nebo můžeme udělat nový backend
+
+248
+00:13:08,746 --> 00:13:11,146
+pro Red a Red/System
+
+249
+00:13:11,146 --> 00:13:13,710
+abychom byli schopni kompilovat přímo do bytekódu
+
+250
+00:13:13,710 --> 00:13:15,817
+příslušných virtuálních strojů.
+
+251
+00:13:15,817 --> 00:13:17,905
+To jsou naše možnosti.
+
+252
+00:13:17,905 --> 00:13:21,645
+Začali jsme s přemostěním do JVM.
+
+253
+00:13:21,645 --> 00:13:26,405
+Neustále se snažíme vybrat to správné řešení,
+
+254
+00:13:26,405 --> 00:13:30,067
+které bude nejlépe vyhovovat danému úkolu.
+
+255
+00:13:30,067 --> 00:13:33,188
+Takže teď se snažíme o propojení s JVM.
+
+256
+00:13:33,188 --> 00:13:37,997
+Ale do JavaScriptu budeme pravděpodobně kompilovat.
+
+257
+00:13:37,997 --> 00:13:41,551
+Je tu asm.js, což je
+
+258
+00:13:41,551 --> 00:13:45,325
+velice zajímavá platforma.
+
+259
+00:13:45,325 --> 00:13:47,584
+Čekám, že zde Red a Red/System
+
+260
+00:13:47,584 --> 00:13:50,755
+poběží velice rychle.
+
+261
+00:13:50,755 --> 00:13:53,753
+Abych vám vysvětlil, jak to funguje.
+
+262
+00:13:53,753 --> 00:13:57,242
+Máte Red, jeden spustitelný soubor.
+
+263
+00:13:57,242 --> 00:14:01,118
+Stáhnete jej a s ním můžete:
+
+264
+00:14:01,118 --> 00:14:04,756
+spouštět Red skripty přímo v paměti
+
+265
+00:14:04,756 --> 00:14:08,124
+Můžete je přeložit do spustitelného souboru.
+
+266
+00:14:08,124 --> 00:14:12,805
+Můžete je křížově přeložit...
+
+267
+00:14:12,805 --> 00:14:15,324
+K tomu se ještě vrátíme.
+
+268
+00:14:15,324 --> 00:14:19,071
+Můžete také přímo kompilovat skripty v Red/System,
+
+269
+00:14:19,071 --> 00:14:22,291
+pokud nechcete používat Red vrstvu,
+
+270
+00:14:22,291 --> 00:14:26,063
+ale chcete kódovat aplikace co nejblíž harware.
+
+271
+00:14:26,063 --> 00:14:29,955
+Také můžete kompilovat sdílené knihovny
+
+272
+00:14:29,955 --> 00:14:32,948
+což umožňuje šířít Red tím,
+
+273
+00:14:32,948 --> 00:14:36,582
+že jej napojíme, kam jen to půjde.
+
+274
+00:14:36,582 --> 00:14:39,954
+Dále můžete spustit Red jako konzoli.
+275
+00:14:39,954 --> 00:14:42,206
+Takže máme Red konzoli.
+
+276
+00:14:42,206 --> 00:14:45,499
+Křížový překlad... Red umí křížově překládat
+
+277
+00:14:45,499 --> 00:14:49,442
+na jiné systémy, z jednoho systému na druhý.
+
+278
+00:14:49,442 --> 00:14:52,731
+Vlastně je schopen zkompilovat se na jakoukoliv platformu,
+
+279
+00:14:52,731 --> 00:14:56,113
+z jakékoliv platformy, na které běží Rebol.
+
+280
+00:14:56,113 --> 00:15:00,808
+Jestli si to chcete vyzkoušet, nepotřebujete HOWTO,
+
+281
+00:15:00,808 --> 00:15:02,363
+nepotřebujete návod.
+
+282
+00:15:02,363 --> 00:15:04,788
+Nemusíte hledat na netu,
+
+283
+00:15:04,788 --> 00:15:07,182
+jak toho dosáhnout.
+
+284
+00:15:07,182 --> 00:15:10,293
+Prostě jen přidáte "-t" a ID cílové platformy
+
+285
+00:15:10,293 --> 00:15:11,777
+a to je všechno.
+
+286
+00:15:11,777 --> 00:15:16,750
+Cílové ID je pouze záznam v konfiguračním souboru,
+
+287
+00:15:16,750 --> 00:15:21,988
+jednoduchý Reddialekt, ve kterém je jen seznam
+
+288
+00:15:21,988 --> 00:15:26,132
+několika nastavení pro cílovou platformu.
+
+289
+00:15:26,132 --> 00:15:31,110
+Teď máme seznam osmi platforem,
+
+290
+00:15:31,110 --> 00:15:33,602
+můžeme překládat z jedné na druhou,
+
+291
+00:15:33,602 --> 00:15:35,828
+stačí, aby Rebol
+
+292
+00:15:35,828 --> 00:15:40,124
+běžel na zdrojové platformě.
+
+293
+00:15:40,124 --> 00:15:41,557
+Jak vidíte, podporujeme hlavně
+
+294
+00:15:41,557 --> 00:15:45,594
+procesory x86 a ARM.
+
+295
+00:15:45,594 --> 00:15:49,412
+Pokuím se trochu hlouběji rozebrat
+
+296
+00:15:49,412 --> 00:15:51,796
+jednotlivé nástroje.
+
+297
+00:15:51,796 --> 00:15:54,506
+Máme klasickou dvojku: kompiler, linker.
+
+298
+00:15:54,506 --> 00:16:01,832
+A kompiler podporuje hlavně
+
+299
+00:16:01,832 --> 00:16:07,115
+tyto dvě platformy, x86 a ARM.
+
+300
+00:16:07,115 --> 00:16:11,919
+A plánujeme rozšířit podporu na ARMv7
+
+301
+00:16:11,919 --> 00:16:17,236
+"thumb mód" and 64-bitové platformy.
+
+302
+00:16:17,236 --> 00:16:22,287
+Dále přidáme virtuální stroje.
+
+303
+00:16:22,287 --> 00:16:26,207
+JavaScript, JVM bytecode... Dex pro Dalvik
+
+304
+00:16:26,207 --> 00:16:30,153
+jako alternativa vůči JVM na Androidu.
+
+305
+00:16:30,153 --> 00:16:34,462
+MSIL je jméno bytecode
+
+306
+00:16:34,462 --> 00:16:37,043
+pro .NET.
+
+307
+00:16:37,043 --> 00:16:39,737
+Linker podporuje hlavní formáty souborů.
+So the Linker is supporting the main file formats.
+
+308
+00:16:39,737 --> 00:16:43,532
+Přidáme i podporu statických knihoven.
+
+309
+00:16:43,532 --> 00:16:46,418
+Takže budete moci zkompilovat program v Redu
+
+310
+00:16:46,418 --> 00:16:51,578
+jako staticku knihovnu, abyste ho později
+
+311
+00:16:51,578 --> 00:16:55,233
+přilinkovali k externím nástrojům, jako například C.
+
+312
+00:16:55,233 --> 00:16:59,655
+To je jedna možnost, jak rošířit Red
+
+313
+00:16:59,655 --> 00:17:02,448
+a umožnit lidem, aby používali Red
+
+314
+00:17:02,448 --> 00:17:04,962
+se jazyky a softwarem třetích stran.
+
+315
+00:17:04,962 --> 00:17:09,242
+Zároveň jdeme až na úroveň kernelu
+
+316
+00:17:09,242 --> 00:17:14,305
+a naízíme podporu pro vytváření
+
+317
+00:17:14,305 --> 00:17:19,234
+ovladačů jádra, nebo i celých operačních systémů
+
+318
+00:17:19,234 --> 00:17:21,787
+přímo z Redu.
+
+319
+00:17:21,787 --> 00:17:24,199
+V součastnosti máme funkční
+
+320
+00:17:24,199 --> 00:17:27,504
+experimentální podporu Windows kernel driverů.
+
+321
+00:17:27,504 --> 00:17:31,980
+Pokud jsou zde nějakcí vývojáři Windows ovladačů,
+
+322
+00:17:31,980 --> 00:17:34,213
+můžete si s tím pohrát. :-P
+
+323
+00:17:34,213 --> 00:17:37,458
+A nakonec: něco, co pokud vím,
+
+324
+00:17:37,458 --> 00:17:40,247
+v klasických C nástrojích:
+
+325
+00:17:40,247 --> 00:17:42,530
+budeme mít balíčkovou vrstvu,
+
+326
+00:17:42,530 --> 00:17:46,044
+která zatím není implementovaná, ale brzy bude.
+
+327
+00:17:46,044 --> 00:17:51,589
+Začneme s Androdím APK.
+
+328
+00:17:51,589 --> 00:17:54,697
+Smyslem téhle vrstvy
+
+329
+00:17:54,697 --> 00:17:58,850
+je vzít pár souborů a sbalit je dohromady
+
+330
+00:17:58,850 --> 00:18:03,445
+takovým způsobem, jaký daná platforma očekává.
+
+331
+00:18:03,445 --> 00:18:06,426
+Takže budeme podporovat Android, budeme podporovat iOS.
+
+332
+00:18:06,426 --> 00:18:08,997
+Ale tenhle nástroj může být použit
+
+333
+00:18:08,997 --> 00:18:13,409
+i pro balení webových aplikací.
+
+334
+00:18:13,409 --> 00:18:17,371
+Takže jak Java používá .WAR
+
+335
+00:18:17,371 --> 00:18:20,196
+který má velice zajímavé vlastnosti
+
+336
+00:18:20,196 --> 00:18:23,489
+jako zjednodušení nasazení webových aplikací
+
+337
+00:18:23,489 --> 00:18:25,276
+a spravuje jejich verze
+
+338
+00:18:25,276 --> 00:18:27,050
+nebo se dokáže stáhnout změny,
+
+339
+00:18:27,050 --> 00:18:29,342
+což jsou užitečné věci.
+
+340
+00:18:29,342 --> 00:18:31,027
+Dalším věcí ohledně nástrojů je to,
+
+341
+00:18:31,027 --> 00:18:32,544
+že v součastnosti jsou
+
+342
+00:18:32,544 --> 00:18:36,774
+napsány pro Rebol 2.
+
+343
+00:18:36,774 --> 00:18:40,686
+Používáme je již dva roky.
+
+344
+00:18:40,686 --> 00:18:46,907
+Ale finální verze Redu bude mít JIT kompiler.
+
+345
+00:18:46,907 --> 00:18:50,717
+Pokud chceme JIT kompiler, potřebujeme self-hosting.
+
+346
+00:18:50,717 --> 00:18:54,347
+Takže potřebujeme, aby byl red napsán v Redu.
+
+347
+00:18:54,347 --> 00:18:58,587
+To je jediný způsob, jak získat správný JIT kompiler.
+
+348
+00:18:58,587 --> 00:19:03,543
+Na tomhle budeme pravděpodobně pracovat příští rok.
+
+349
+00:19:03,543 --> 00:19:07,550
+Mám několik slajdů přímo o Redu.
+
+350
+00:19:07,550 --> 00:19:10,796
+Ale nebudu příliš zacházet do podrobností,
+
+351
+00:19:10,796 --> 00:19:13,394
+protože by to zabralo zbytečněmoc času.
+
+352
+00:19:13,394 --> 00:19:18,018
+Hlavní vlastností Redu je,
+
+353
+00:19:18,018 --> 00:19:21,098
+že je velice blízký Rebolu.
+
+354
+00:19:21,098 --> 00:19:26,585
+Máme tu některé z hlavních vlastností Rebolu,
+
+355
+00:19:26,585 --> 00:19:31,588
+jako definiční scoping a dynamický binding.
+
+356
+00:19:31,588 --> 00:19:37,178
+Samozřejmě můžete programovat v Redu
+
+357
+00:19:37,178 --> 00:19:40,106
+a používat jaké chcete paradigma.
+
+358
+00:19:40,106 --> 00:19:43,031
+Takže *"paradigmaticky neutrální,"* to je Gabrielův
+
+359
+00:19:43,031 --> 00:19:46,673
+(Gabriele Santilli) výraz, který mám velice rád,
+
+360
+00:19:46,673 --> 00:19:50,013
+nebo%t velice dobře vystihuje schopnost
+
+361
+00:19:50,013 --> 00:19:53,878
+nebýt vázaný konkrétním paradigmatem.
+
+362
+00:19:55,318 --> 00:19:59,298
+Rozdíl mezi Redem a Rebolem je v tom,
+
+363
+00:19:59,298 --> 00:20:05,376
+že v Redu můžete volitelně používat typování lokálních proměnných
+
+364
+00:20:05,376 --> 00:20:09,756
+a také určit typ hodnoty,
+
+365
+00:20:09,756 --> 00:20:12,147
+jež vrací funkce.
+
+366
+00:20:12,147 --> 00:20:17,048
+V Rebolu to nemá smysl,
+
+367
+00:20:17,048 --> 00:20:25,102
+protože Rebol je interpretr, není to potřeba.
+
+368
+00:20:25,102 --> 00:20:27,874
+Ale pro kompiler to má velkou hodnotu.
+
+369
+00:20:27,874 --> 00:20:33,604
+Neboť otypováním ve funkcích
+
+370
+00:20:33,604 --> 00:20:37,791
+dovoléme komplieru vytvořit
+
+371
+00:20:37,791 --> 00:20:43,616
+mnohem přesnější, rychlejší a efektivnější kód,
+
+372
+00:20:43,616 --> 00:20:46,818
+než bez otypování.
+
+373
+00:20:47,728 --> 00:20:53,186
+Red je "volitelně typovaný." Můžete to použít, nebo ne.
+
+374
+00:20:53,186 --> 00:20:56,989
+Záleží to na vašich potřebách, nebo způsobu, kterým programujete.
+
+375
+00:20:56,989 --> 00:20:59,333
+Takže to mlžete dělat jako v Rebolu,
+
+376
+00:20:59,333 --> 00:21:01,619
+což je velice flexibilní.
+
+377
+00:21:01,619 --> 00:21:06,168
+Ale bude to o dost pomalejší.
+
+378
+00:21:06,168 --> 00:21:08,549
+Nebo to můžete udělat staticky,
+
+379
+00:21:08,549 --> 00:21:10,581
+kde všechno otypujete
+
+380
+00:21:10,581 --> 00:21:13,702
+a kompiler zvládne víc typových kontrol,
+
+381
+00:21:13,702 --> 00:21:16,969
+takže odhalíte víc varování nebo chyb
+
+382
+00:21:16,969 --> 00:21:21,230
+při kompilaci, než až při běhu programu.
+
+383
+00:21:21,230 --> 00:21:28,353
+Dále, pokud používáte toto typování,
+
+384
+00:21:28,353 --> 00:21:31,687
+kompiler je v některých případech schopen
+
+385
+00:21:31,687 --> 00:21:34,141
+udělat nějaké přetypování.
+
+386
+00:21:34,141 --> 00:21:36,654
+Takže je schopen uhádnout za vás některé typy.
+
+387
+00:21:36,654 --> 00:21:41,093
+Ale protože Red, stejně jako Rebol, je velce dynamický jazyk,
+
+388
+00:21:41,093 --> 00:21:48,734
+Hlouka záněru této funkce
+
+389
+00:21:48,734 --> 00:21:53,581
+je dost omezená.
+
+390
+00:21:53,581 --> 00:21:56,756
+Takže, jde o malou pomoc, ne o velkou.
+
+391
+00:21:56,756 --> 00:22:01,167
+Samozřejmě podporujeme Unicode.
+
+392
+00:22:01,167 --> 00:22:04,623
+Zdrojové kódy pro Red jsou v UTF-8.
+
+393
+00:22:04,623 --> 00:22:09,567
+Posktneme externí kodyky pro další kódování.
+
+394
+00:22:09,567 --> 00:22:16,728
+Vbitřně, zjednodušeně, Red ukládá a spravuje
+
+395
+00:22:16,728 --> 00:22:20,036
+Unicode řetězce stejným způsobem,
+
+396
+00:22:20,036 --> 00:22:22,719
+jako Python v posledních verzích.
+
+397
+00:22:22,719 --> 00:22:29,671
+Takže uvnitř je znak uložen s pevnou délkou,
+
+398
+00:22:29,671 --> 00:22:35,382
+která ale může být od jednoho do čtyř bytů
+
+399
+00:22:35,382 --> 00:22:37,921
+na jeden znak.
+
+400
+00:22:37,921 --> 00:22:40,144
+Systém se automaticky přizpůsobí
+
+401
+00:22:40,144 --> 00:22:43,224
+a upraví délku v závislosti na vstupu
+
+402
+00:22:43,224 --> 00:22:48,908
+a uprávách daného řetězce.
+
+403
+00:22:48,908 --> 00:22:54,977
+Další velice důuležitou vlastností Redu
+
+404
+00:22:54,977 --> 00:22:57,640
+je paralelismus.
+
+405
+00:22:57,640 --> 00:23:00,108
+Zatím ale není implementovaný,
+
+406
+00:23:00,108 --> 00:23:04,207
+takže to nebudu příliš rozvádět.
+
+407
+00:23:04,207 --> 00:23:09,102
+Chceme podporovat dvě hlavní věci:
+
+408
+00:23:09,102 --> 00:23:11,330
+paralelismus tasků,
+
+409
+00:23:11,330 --> 00:23:15,331
+takže mlžete spustit několik vláken kódu
+
+410
+00:23:15,331 --> 00:23:18,367
+zároveň na více jádrech.
+
+411
+00:23:18,367 --> 00:23:21,891
+Patrně použijeme abstrakci pomocí Aktorů.
+
+412
+00:23:21,891 --> 00:23:26,693
+Ale jsou zde i další abstrakce,
+
+413
+00:23:26,693 --> 00:23:31,042
+které, již od začátku tohoto projektu,
+
+414
+00:23:31,042 --> 00:23:34,926
+získávají dost pozornosti. Jako rutiny v Go,
+
+415
+00:23:34,926 --> 00:23:38,981
+lteré se stávají hlavním tahákem
+
+416
+00:23:38,981 --> 00:23:40,645
+jazyka Go.
+
+417
+00:23:40,645 --> 00:23:43,082
+Takže to je něco, co bychom měli vzít v potaz
+
+418
+00:23:43,082 --> 00:23:45,725
+i pro Red, například...
+
+419
+00:23:45,725 --> 00:23:48,651
+k, nebo místo aktorů
+
+420
+00:23:48,651 --> 00:23:50,974
+a dalších druhů abstrakce.
+
+421
+00:23:50,974 --> 00:23:54,765
+Takže až se dostaneme k implementaci paralelismu,
+
+422
+00:23:54,765 --> 00:23:57,311
+budeme muset znovu zvážit
+
+423
+00:23:57,311 --> 00:23:59,900
+všechna návrhy a modely
+
+424
+00:23:59,900 --> 00:24:03,665
+a rozhodnout se, zda je neupravit zkopírováním
+
+425
+00:24:03,665 --> 00:24:06,840
+některých úspěšných strategií.
+
+426
+00:24:06,840 --> 00:24:09,047
+Také chceme jistou úroveň paralelismu
+
+427
+00:24:09,047 --> 00:24:13,712
+pomocí SIMD
+
+428
+00:24:13,712 --> 00:24:16,582
+nebo vícejádrového zpracování.
+
+429
+00:24:16,582 --> 00:24:19,851
+Takže vlastně budeme využívat schopnost
+
+430
+00:24:19,851 --> 00:24:25,917
+paralelizace ke zpracování řad v Redu.
+
+431
+00:24:25,917 --> 00:24:30,758
+Také bych rádi vyřešili něco,
+
+432
+00:24:30,758 --> 00:24:33,476
+co Rebol v součastnosti vlastně neřeší
+
+433
+00:24:33,476 --> 00:24:36,231
+a to je: jak vytvoříte dialekt?
+
+434
+00:24:36,231 --> 00:24:38,956
+Nebo jak vytvoříte DSL?
+
+435
+00:24:38,956 --> 00:24:41,438
+Rebol je v tomto skvělý --
+
+436
+00:24:41,438 --> 00:24:44,368
+je to patrně nejlepší nástroj k tomtu účelu
+
+437
+00:24:44,368 --> 00:24:45,658
+neboť má PARSE a neboť
+
+438
+00:24:45,658 --> 00:24:48,084
+má několik zajímavých vlastností,
+
+439
+00:24:48,084 --> 00:24:50,101
+které z něj činí skvělou volbu.
+
+440
+00:24:50,101 --> 00:24:54,911
+Nicméně, tvorba DSL nebo dialektu
+
+441
+00:24:54,911 --> 00:24:57,186
+není triviální.
+
+442
+00:24:57,186 --> 00:24:59,774
+Neboť jej nejdřív potřebujete navrhnout.
+
+443
+00:24:59,774 --> 00:25:01,425
+Což je dost práce.
+
+444
+00:25:01,425 --> 00:25:03,427
+A pak to musíte implementovat.
+
+445
+00:25:03,427 --> 00:25:07,113
+A implementace DSL nebo dialektu,
+
+446
+00:25:07,113 --> 00:25:11,151
+to je implementace interpetru nebo kompileru.
+
+447
+00:25:11,151 --> 00:25:17,524
+A na to jste většinou sami,
+
+448
+00:25:17,524 --> 00:25:20,462
+Není žádný framework
+
+449
+00:25:20,462 --> 00:25:22,134
+pro tyto věci.
+
+450
+00:25:22,134 --> 00:25:25,585
+A je možné vyzdvihnout kvality
+
+451
+00:25:25,585 --> 00:25:27,439
+Rebolu v Redu
+
+452
+00:25:27,439 --> 00:25:29,507
+a nebo i přímo v Rebolu
+
+453
+00:25:29,507 --> 00:25:32,431
+a udělat něco jako meta-DSL
+
+454
+00:25:32,431 --> 00:25:38,218
+lteré vám umožní být výkonější
+
+455
+00:25:38,218 --> 00:25:40,920
+a dát vám rámec
+
+456
+00:25:40,920 --> 00:25:44,260
+pro tvorbu nových dialektů a DSL.
+
+457
+00:25:44,260 --> 00:25:47,156
+V podstatě to bude něco
+
+458
+00:25:47,156 --> 00:25:50,105
+jako nadstavba nad PARSE.
+
+459
+00:25:50,105 --> 00:25:52,557
+Můžete si to například představit
+
+460
+00:25:52,557 --> 00:25:59,457
+jako PARSE s eventovou smyčkou,
+
+461
+00:25:59,457 --> 00:26:03,732
+která bude skrytá.
+
+462
+00:26:03,732 --> 00:26:07,914
+Podobně jako to dělal Visual Basic.
+
+463
+00:26:07,914 --> 00:26:11,544
+A vy pouze nadefinujete události
+
+464
+00:26:11,544 --> 00:26:17,351
+k vytvoření vašeho DSL coby interpetru nebo kompileru.
+
+465
+00:26:17,351 --> 00:26:26,170
+Takže co dělá Red kompiler?
+
+466
+00:26:26,170 --> 00:26:30,786
+Red kompiler převádí red kód
+
+467
+00:26:30,786 --> 00:26:34,944
+na Red/System, což je nižší vrstva.
+
+468
+00:26:34,944 --> 00:26:40,093
+Chtěl bych vám ukázat, jak to vypadá.
+
+469
+00:26:40,093 --> 00:26:45,535
+Takže si vezmeme velice jednoduchý výraz v Redu,
+
+470
+00:26:45,535 --> 00:26:48,493
+Red kompiler jej vyparsuje
+
+471
+00:26:48,493 --> 00:26:53,884
+a použije abstrakci stacku k umístění argumentů.
+
+472
+00:26:53,884 --> 00:26:58,480
+Vlastně používá dva stacky: jeden pro buňky
+
+473
+00:26:58,480 --> 00:27:01,819
+a jeden pro argumenty.
+
+474
+00:27:01,819 --> 00:27:05,361
+A emiter vytvoří kód v Red/System
+
+475
+00:27:05,361 --> 00:27:08,363
+na tomto založený.
+
+476
+00:27:08,363 --> 00:27:10,782
+Takže to, co vidíte vpravo
+
+477
+00:27:10,782 --> 00:27:14,350
+je tento výraz v Red/System
+
+478
+00:27:14,350 --> 00:27:18,061
+volající Red runtime API.
+
+479
+00:27:22,651 --> 00:27:28,334
+Další jedinečnou vlastností Red kompileru
+
+480
+00:27:28,334 --> 00:27:29,406
+a celého jazyka Red je to,
+
+481
+00:27:29,406 --> 00:27:34,169
+že spojuje několik druhů přístupu,
+
+482
+00:27:34,169 --> 00:27:37,846
+co že, jak se domnívám, něco jedinečného.
+
+483
+00:27:37,846 --> 00:27:41,156
+Takže máte statický kompiler.
+
+484
+00:27:41,156 --> 00:27:44,538
+Tento statický kompiler generuje kód
+
+485
+00:27:44,538 --> 00:27:46,584
+se zabudovaným interpretrem a zítra
+
+486
+00:27:46,584 --> 00:27:51,606
+i s JIT-kompilerem vloženým přímo do vašeho spustitelného souboru.
+
+487
+00:27:51,606 --> 00:27:58,368
+Všechny tyto tři části budou schopny
+
+488
+00:27:58,368 --> 00:28:02,334
+velice provázaně spolupracovat.
+
+489
+00:28:02,334 --> 00:28:05,191
+Takže například zkompilovaný kód
+
+490
+00:28:05,191 --> 00:28:08,428
+může zavolat interní interpretr
+
+491
+00:28:08,428 --> 00:28:12,551
+který může volat nazpět do kompilovaného kódu.
+
+492
+00:28:12,551 --> 00:28:16,189
+To stejné platí i pro JIT kompiler.
+
+493
+00:28:16,189 --> 00:28:19,973
+Je to trošku abstraktní, ale na konci prezentace
+
+494
+00:28:19,973 --> 00:28:21,707
+vám můžu ukázat jeden slide
+
+495
+00:28:21,707 --> 00:28:23,904
+s praktickým využitím takovéhoto přístupu.
+
+496
+00:28:23,904 --> 00:28:28,901
+Ve skutečnosti je takovýto přístup velice silným nástrojem
+
+497
+00:28:28,901 --> 00:28:35,136
+pro řešení komplexních sémantických problémů.
+
+498
+00:28:35,136 --> 00:28:39,575
+Například, kompilace symbolického kódu,
+
+499
+00:28:39,575 --> 00:28:42,229
+což je dost těžko proveditelné.
+
+500
+00:28:42,229 --> 00:28:43,740
+Ale pokud zkombinujete různé přístupy,
+
+501
+00:28:43,740 --> 00:28:49,758
+můžete najít velice efektivní řešení.
+
+502
+00:28:49,758 --> 00:28:54,407
+Tohle je jen velice jednoduchý příklad toho,
+
+503
+00:28:54,407 --> 00:29:00,583
+jak vypadá kód v Redu.
+
+504
+00:29:00,583 --> 00:29:03,399
+Máte stejné principy jako v Rebolu,
+
+505
+00:29:03,399 --> 00:29:08,492
+takže máte značku, to je [Red],
+
+506
+00:29:08,492 --> 00:29:13,355
+následovanou blokem, který tvoří hlavičku
+
+507
+00:29:13,355 --> 00:29:17,254
+a po ní následuje vlastní program.
+
+508
+00:29:17,254 --> 00:29:19,921
+Hello world je prostě [print "Hello World"]
+
+509
+00:29:19,921 --> 00:29:22,312
+stejně jako v Rebolu a i zbytek kódu
+
+510
+00:29:22,312 --> 00:29:26,336
+patrně vypadá jak rebol
+
+511
+00:29:26,336 --> 00:29:32,270
+možná až na [return: [type!]]
+
+512
+00:29:32,270 --> 00:29:36,908
+což je nepovinné, je to jedno z toho
+
+513
+00:29:36,908 --> 00:29:40,409
+dobrovolného typování, o kterém jsem již dříve mluvil.
+
+514
+00:29:40,409 --> 00:29:43,389
+Takže tohle je příklad.
+
+515
+00:29:43,389 --> 00:29:48,196
+Nemusíte to používat, ale pokud to použijete,
+
+516
+00:29:48,196 --> 00:29:54,758
+kompiler dokáže vygenerovat lepší a rychlejší kód.
+
+517
+00:29:54,758 --> 00:29:59,006
+Toto je podrobnější přehled
+
+518
+00:29:59,006 --> 00:30:02,905
+vnitřku Red, různých částí,
+
+519
+00:30:02,905 --> 00:30:05,640
+takže si dokážete vytvořit lepší představu
+
+520
+00:30:05,640 --> 00:30:09,472
+o tom,jak spolu jednotilvé prvky souvisí.
+
+521
+00:30:09,472 --> 00:30:13,971
+Takže začneme u panáčka vpravo,
+
+522
+00:30:13,971 --> 00:30:17,047
+máme front-end skript v terminálu
+
+523
+00:30:17,047 --> 00:30:19,852
+který je v součastnosti napsán v Rebolu2
+
+524
+00:30:19,852 --> 00:30:25,527
+a za kterým jsou dvě řešení
+
+525
+00:30:25,527 --> 00:30:28,351
+pro dva kompilery. Jeden pro Red, který je
+
+526
+00:30:28,351 --> 00:30:32,604
+menší, neboť pouze vytváří kód pro Red/System.
+
+527
+00:30:32,604 --> 00:30:34,311
+A jeden pro Red/System,
+
+528
+00:30:34,311 --> 00:30:36,720
+který jde do packageru
+
+529
+00:30:36,720 --> 00:30:41,424
+a ten vytvoří binární soubory.
+
+530
+00:30:41,424 --> 00:30:47,027
+Všechny tyto nástorje jsou napsány v Rebolu 2.
+
+531
+00:30:47,027 --> 00:30:52,304
+Vlevo mám Red runtime.
+
+532
+00:30:52,304 --> 00:30:55,586
+Což je dost kódu,
+
+533
+00:30:55,586 --> 00:30:59,651
+patrně víc, než na druhé straně.
+
+534
+00:30:59,651 --> 00:31:02,964
+A ten je napsán v Red/System.
+
+535
+00:31:02,964 --> 00:31:06,914
+Takže všechna skutečná síle je na této straně,
+
+536
+00:31:06,914 --> 00:31:08,649
+jako například všechny datatypy,
+
+537
+00:31:08,649 --> 00:31:12,104
+všechny nativní funkce a mezaninový kód,
+
+538
+00:31:12,104 --> 00:31:16,600
+interpretr, přemostění -- jako například do Javy,
+
+539
+00:31:16,600 --> 00:31:19,025
+které je již k dispozici.
+
+540
+00:31:19,025 --> 00:31:23,058
+Správa paměti a low-level rozhraní
+
+541
+00:31:23,058 --> 00:31:26,485
+k podkladovým vrstvám.
+
+542
+00:31:26,485 --> 00:31:28,829
+Například máte přímý přístup
+
+543
+00:31:28,829 --> 00:31:31,993
+nejen k API systému, ale i ke kernelu.
+
+544
+00:31:31,993 --> 00:31:34,001
+Na Linux můžete přímo provádět syscall.
+
+545
+00:31:34,001 --> 00:31:38,340
+A pokud je to potřeba, můžete ještě hlouběji,
+
+546
+00:31:38,340 --> 00:31:41,869
+až na hardware a volat skutečně low-level funkce.
+
+547
+00:31:44,599 --> 00:31:46,625
+Asi jsem zapomněl na Red konzoli,
+
+548
+00:31:46,625 --> 00:31:49,985
+která je také napsána v Redu
+
+549
+00:31:49,985 --> 00:31:52,946
+a v Red/System pro low-level záležitosti.
+
+550
+00:31:53,816 --> 00:31:57,120
+Pokud jde o Red/System... Mám zítra malou prezentaci
+
+551
+00:31:57,120 --> 00:32:01,142
+zvlášť o Red_System, neboť
+
+552
+00:32:01,142 --> 00:32:06,082
+je to něco nového v Redu, ve srovnání s Rebolem.
+
+553
+00:32:06,082 --> 00:32:08,541
+Takže tu mám jen jeden slide o Red/System,
+
+554
+00:32:08,541 --> 00:32:10,120
+abych nastínil, o co jde.
+
+555
+00:32:10,120 --> 00:32:16,748
+V podstatě je to jen jazyk jako C,
+
+556
+00:32:16,748 --> 00:32:20,078
+ale se syntaxí jako Red.
+
+557
+00:32:20,078 --> 00:32:22,760
+Takže často to vypadá jako programování v Redu,
+
+558
+00:32:22,760 --> 00:32:29,827
+ale s velice základními datatypy a akcemi.
+
+559
+00:32:29,827 --> 00:32:32,630
+Je staticky kompilován.
+
+560
+00:32:32,630 --> 00:32:35,956
+V součastnosti není nijak optimalizovám :-)
+
+561
+00:32:35,956 --> 00:32:40,988
+Ale přesto je jen 4x pomalejší, než optimalizované C
+
+562
+00:32:40,988 --> 00:32:43,849
+kompilované s "-O2".
+
+563
+00:32:43,849 --> 00:32:47,674
+Což je dost dobré, vlastně velice dobré.
+
+564
+00:32:47,674 --> 00:32:51,224
+Neboť, až přidáme optimalizační vrstvy,
+
+565
+00:32:51,224 --> 00:32:53,398
+bude to velice, velice blízko C.
+
+566
+00:32:53,398 --> 00:32:57,362
+Patrně C neporazíme, ale o to nejde.
+
+567
+00:32:57,362 --> 00:33:00,014
+Nicméně budeme velice, velice blízko.
+
+568
+00:33:00,014 --> 00:33:05,041
+Takže Red/System bude životaschopná alternativa vůči C.
+
+569
+00:33:05,041 --> 00:33:09,334
+A v některých oblastech sktečně září,
+
+570
+00:33:09,334 --> 00:33:11,936
+jako například ve zpracování obrazu,
+
+571
+00:33:11,936 --> 00:33:15,680
+které vám Bo (Lechnowsky) ukáže zítra.
+
+572
+00:33:15,680 --> 00:33:17,968
+Něco, co C nemá
+
+573
+00:33:17,968 --> 00:33:22,310
+a ani většina nízkoúrovňových jazyků,
+
+574
+00:33:22,310 --> 00:33:24,792
+Red/System má jmenné prostory,
+
+575
+00:33:24,792 --> 00:33:27,024
+které jsou něco jako kontexty v Rebolu,
+
+576
+00:33:27,024 --> 00:33:33,586
+ale velmi statické; takže používáme příkaz CONTEXT
+
+577
+00:33:33,586 --> 00:33:35,909
+pro jejich deklaraci i v Red/System.
+
+578
+00:33:35,909 --> 00:33:38,936
+Také můžete použít příkaz WITH
+
+579
+00:33:38,936 --> 00:33:43,428
+aby jste vložili část vašeho kódu do kontextu,
+
+580
+00:33:43,428 --> 00:33:47,121
+něco jako deklarace v jiných jazycích.
+
+581
+00:33:47,121 --> 00:33:52,155
+V Red/System máme velice omezený počet typů.
+
+582
+00:33:52,155 --> 00:34:00,763
+Máme devět typů.
+
+583
+00:34:00,763 --> 00:34:05,467
+Prakticky ty samé, jako v C.
+
+584
+00:34:05,467 --> 00:34:11,372
+Funkce není plně first-class datový typ.
+
+585
+00:34:11,372 --> 00:34:16,155
+Dost jsem tomu odolával, neboť...
+
+586
+00:34:16,155 --> 00:34:19,723
+pokud bude plně first-class datový typ,
+
+587
+00:34:19,723 --> 00:34:22,571
+lidé po mně začnou chtít,
+
+588
+00:34:22,571 --> 00:34:24,925
+abych z Red/System udělal funkcionální jazyk.
+
+589
+00:34:24,925 --> 00:34:27,986
+Což je sice možné, ale není to cíl.
+
+590
+00:34:27,986 --> 00:34:32,540
+Ničemu to nepomůže, takže se velice zdráhám
+
+591
+00:34:32,540 --> 00:34:37,835
+přidávat další vlastnosti tomutu datovému typu.
+
+592
+00:34:37,835 --> 00:34:40,324
+Máme typovou inferenci,
+
+593
+00:34:40,324 --> 00:34:42,395
+takže nemusíte zadávat typ pro lokální proměnné,
+
+594
+00:34:42,395 --> 00:34:45,235
+kompiler je uhodne.
+
+595
+00:34:45,235 --> 00:34:48,666
+Také máme omezený type-casting
+
+596
+00:34:48,666 --> 00:34:52,473
+mezi kompatibilními datovými typy.
+
+597
+00:34:52,473 --> 00:34:56,548
+A taky máme něco, co C nemá,
+
+598
+00:34:56,548 --> 00:35:04,017
+C++ ano, s jistou úrovní reflexe.
+
+599
+00:35:04,017 --> 00:35:07,445
+Takže můžete nadefinovat funkci v Red/System,
+
+600
+00:35:07,445 --> 00:35:12,157
+s proměnným počtem argumentů,
+
+601
+00:35:12,157 --> 00:35:14,311
+které uzavřete do hranatých závorek
+
+602
+00:35:14,311 --> 00:35:16,341
+a uvnitř funkce
+
+603
+00:35:16,341 --> 00:35:19,854
+procházíte seznam argumentů
+
+604
+00:35:19,854 --> 00:35:23,665
+a můžete zjistit typ každého z nich.
+
+605
+00:35:23,665 --> 00:35:26,778
+Což je velice výborná vlastnost
+
+606
+00:35:26,778 --> 00:35:32,499
+a Kaj de Vos ji využil k tomu
+
+607
+00:35:32,499 --> 00:35:36,773
+aby vytvořil dialekt jako VID v Red/Systemu
+
+608
+00:35:36,773 --> 00:35:38,853
+což je úctyhodný výkon, neboť
+
+609
+00:35:38,853 --> 00:35:42,243
+v Red/Systemu nemáme žádné symboly :-)
+
+610
+00:35:42,243 --> 00:35:47,656
+Takže to vypadá jako VID, ale k fungování
+
+611
+00:35:47,656 --> 00:35:50,854
+to využívá tuto vlastnost, což je vážně skvělé.
+
+612
+00:35:50,854 --> 00:35:55,630
+Dále máme v Red/System preprocesor,
+
+613
+00:35:55,630 --> 00:36:01,262
+ale v další hlavní verzi bych se ho rád zbavil,
+
+614
+00:36:01,262 --> 00:36:06,590
+neboť přináší více problémů,
+
+615
+00:36:06,590 --> 00:36:11,779
+než by usnaďnoval práci.
+
+616
+00:36:11,779 --> 00:36:13,727
+Takže část určitě ponecháme,
+
+617
+00:36:13,727 --> 00:36:16,774
+ale musíme jej znovu promysllet a předělat design.
+
+618
+00:36:16,774 --> 00:36:20,186
+#define je mocná zbraň,
+
+619
+00:36:20,186 --> 00:36:22,128
+neboť vám dává málem tu samou sílu
+
+620
+00:36:22,128 --> 00:36:27,392
+jako C-makra, můžete používat i parametry.
+
+621
+00:36:27,392 --> 00:36:34,001
+Také bychom rádi nízkoúrovňovou podporu procesoru,
+
+622
+00:36:34,001 --> 00:36:39,385
+v součastnosti máme přístup k některým registrům
+
+623
+00:36:39,385 --> 00:36:41,747
+na více platformách.
+
+624
+00:36:41,747 --> 00:36:43,617
+Máme přístup ke stacku --
+
+625
+00:36:43,617 --> 00:36:46,743
+můžete manipulovat s nativním stackem
+
+626
+00:36:46,743 --> 00:36:49,724
+na úrovni Red/System multiplatformově.
+
+627
+00:36:49,724 --> 00:36:55,232
+A přidáme podporu pro přerušení a I/O
+
+628
+00:36:55,232 --> 00:37:02,004
+a další základní vlastnosti CPU.
+
+629
+00:37:02,004 --> 00:37:07,289
+Možná přidáme podporu pro vložený assembler,
+
+630
+00:37:07,289 --> 00:37:10,224
+ale v součastnosti to není příliš potřeba.
+
+631
+00:37:10,224 --> 00:37:13,926
+Několik údajů o Redu.
+
+632
+00:37:13,926 --> 00:37:18,596
+Licence je většinou BSD,
+
+633
+00:37:18,596 --> 00:37:22,560
+a pro runtime části Redu používáme BSL
+
+634
+00:37:22,560 --> 00:37:25,945
+což je "Boost Software License",
+
+635
+00:37:25,945 --> 00:37:32,015
+která je ještě liberálnější, než BSD.
+
+636
+00:37:32,015 --> 00:37:34,999
+Takže máte ještě méně omezení, než s BSD.
+
+637
+00:37:34,999 --> 00:37:37,856
+Od začátku jsme na GitHubu.
+
+638
+00:37:37,856 --> 00:37:43,033
+Máme devět přispěvatelů... Ne to je špatně,
+
+639
+00:37:43,033 --> 00:37:46,604
+v součastnosti je jich jedenáct.
+
+640
+00:37:46,604 --> 00:37:50,335
+Máme více než dva tisíce commitů,
+
+641
+00:37:50,335 --> 00:37:52,867
+v to nepočítám merge commity.
+
+642
+00:37:52,867 --> 00:37:58,035
+Máme zhruba 500 problémů v bug trackeru,
+
+643
+00:37:58,035 --> 00:38:00,490
+ale většinou jsou již uzavřeny,
+
+644
+00:38:00,490 --> 00:38:03,576
+snažíme se je řešit co nejdřív,
+
+645
+00:38:03,576 --> 00:38:05,852
+aby se nám nehromadily.
+
+646
+00:38:05,852 --> 00:38:07,516
+Neboť jak se jednou nahromadí,
+
+647
+00:38:07,516 --> 00:38:10,788
+je velký problém se jich zbavit.
+
+648
+00:38:10,788 --> 00:38:14,469
+Takže je musíme držet velice nízko.
+
+649
+00:38:14,469 --> 00:38:16,696
+Máme velkou spoustu testů,
+
+650
+00:38:16,696 --> 00:38:19,569
+které připravil Peter Wood,
+
+651
+00:38:19,569 --> 00:38:23,180
+odvedl na tom skvělou práci.
+
+652
+00:38:23,180 --> 00:38:25,361
+Je to velice, velice užitečné.
+
+653
+00:38:25,361 --> 00:38:27,897
+A tady je pár údajů
+
+654
+00:38:27,897 --> 00:38:30,019
+o velikosti zdrojového kódu
+
+655
+00:38:30,019 --> 00:38:32,026
+pro Red a Red/System.
+
+656
+00:38:32,026 --> 00:38:34,073
+Pro kompiler a pro linker.
+
+657
+00:38:34,073 --> 00:38:35,923
+Jak můžete sami vidět,
+
+658
+00:38:35,923 --> 00:38:37,897
+je to opravdu malý kód.
+
+659
+00:38:37,897 --> 00:38:41,619
+Takže toho můžete dokázat spoustu, díky Rebolu :-)
+
+660
+00:38:41,619 --> 00:38:45,444
+můžete dokázat hodně s malým kódem,
+
+661
+00:38:45,444 --> 00:38:47,680
+jen s pár řádky kódu.
+
+662
+00:38:47,680 --> 00:38:50,946
+Můžete to srovnat s ostatními nástroji
+
+663
+00:38:50,946 --> 00:38:55,006
+and you'll often see one or two
+a často zjistíte, že jsou o jeden nebo dva
+
+664
+00:38:55,006 --> 00:38:57,700
+řády rozsáhlejší.
+
+665
+00:38:57,700 --> 00:38:59,251
+Samozřejmě toho nejspíš zvládají
+
+666
+00:38:59,251 --> 00:39:01,428
+více, než my.
+
+667
+00:39:01,428 --> 00:39:06,544
+Ale is tak malým kódem
+
+668
+00:39:06,544 --> 00:39:09,376
+řešíme spoustu problémů.
+
+669
+00:39:09,376 --> 00:39:14,352
+Před námi je ještě spousta práce,
+
+670
+00:39:14,352 --> 00:39:18,824
+všechno se teprve vyvíjí.
+
+671
+00:39:18,824 --> 00:39:23,389
+Pořád chybí důležité části jádra.
+
+672
+00:39:23,389 --> 00:39:30,653
+Potřebujeme podporu objektů, tu zatím nemáme.
+
+673
+00:39:30,653 --> 00:39:34,083
+Nemmáme pořádnou správu chyb,
+
+674
+00:39:34,083 --> 00:39:36,009
+neboť pro to potřebujeme OBJECT!.
+
+675
+00:39:36,009 --> 00:39:40,244
+V některých částech kompileru
+
+676
+00:39:40,244 --> 00:39:42,915
+zatím chybí podpora typů.
+
+677
+00:39:42,915 --> 00:39:45,487
+Zaním nemáme I/O, ale...
+
+678
+00:39:45,487 --> 00:39:50,941
+samozřejmě že objekty a I/O jsou první na řadě,
+
+679
+00:39:50,941 --> 00:39:54,697
+Patrně budou hotové toto léto.
+
+680
+00:39:54,697 --> 00:39:59,696
+Chceme i nějakou podporu paralelismu
+
+681
+00:39:59,696 --> 00:40:05,334
+ve verzi 1.0 a samozřejmě chceme
+
+682
+00:40:05,334 --> 00:40:09,829
+i modulární kompilaci a modulární systém.
+
+683
+00:40:09,829 --> 00:40:14,260
+Patrně nabídneme minimální IDE pro Red,
+
+684
+00:40:14,260 --> 00:40:18,032
+což bude patrně jen editor
+
+685
+00:40:18,032 --> 00:40:23,468
+a debugger... a budeme pracovat
+
+686
+00:40:23,468 --> 00:40:27,570
+na rozšíření v budoucích verzích.
+
+687
+00:40:27,570 --> 00:40:31,050
+Také chceme kompletní dokumentaci
+
+688
+00:40:31,050 --> 00:40:37,597
+což je naprostá nutnost pro 1.0,
+
+689
+00:40:37,597 --> 00:40:41,836
+takže nás čeká spousta práce s psaním dokumentace
+
+690
+00:40:41,836 --> 00:40:43,650
+a návodů.
+
+691
+00:40:43,650 --> 00:40:46,529
+No a samozřejmě potřebujeme nový web
+
+692
+00:40:46,529 --> 00:40:49,753
+pro spuštění verze 1.0.
+
+693
+00:40:51,613 --> 00:40:54,761
+Ale to není všechno... :-)
+
+694
+00:40:54,761 --> 00:40:57,310
+to není skutečný Red.
+
+695
+00:40:57,310 --> 00:41:00,523
+Skutečný Red bude verze 2.0.
+
+696
+00:41:00,523 --> 00:41:05,640
+A máme pro něj skvělé obsazení (smích)
+
+697
+00:41:05,640 --> 00:41:07,538
+Takže, co je to "Skutečný Red"?
+
+698
+00:41:07,538 --> 00:41:11,329
+Ve skutečnosti to, co jsem vám zatím předvedl,
+
+699
+00:41:11,329 --> 00:41:13,583
+je jen jakési lešení.
+
+700
+00:41:13,583 --> 00:41:15,570
+Neboť skutečný Red je toto:
+
+701
+00:41:15,570 --> 00:41:23,308
+Skutečný Red bude vlastně JIT kompiler,
+
+702
+00:41:23,308 --> 00:41:27,206
+který bude zároveň fungovat jako statický kompiler.
+
+703
+00:41:27,206 --> 00:41:29,613
+Celá vnitřní architektura
+
+704
+00:41:29,613 --> 00:41:32,929
+bude naprosto odlišná od současné,
+
+705
+00:41:32,929 --> 00:41:35,846
+která je implementována v bootstrapované verzi.
+
+706
+00:41:35,846 --> 00:41:39,254
+Bude to založeno na pluginech,
+
+707
+00:41:39,254 --> 00:41:40,910
+takže kompiler a všechny nástroje
+
+708
+00:41:40,910 --> 00:41:44,718
+budou prázdnou schránkou -- frameworkem --
+
+709
+00:41:44,718 --> 00:41:49,830
+kam budete moc napojit jednotlivé moduly
+
+710
+00:41:49,830 --> 00:41:54,223
+a přidat tak nové vlastnosti v každé fázi kompilace.
+
+711
+00:41:54,223 --> 00:41:57,606
+Od parsování až po vytváření binárek.
+
+712
+00:41:57,606 --> 00:42:00,981
+Budete mít k dispozici API.
+
+713
+00:42:00,981 --> 00:42:03,679
+Takže poskytnu framework
+
+714
+00:42:03,679 --> 00:42:07,304
+a základní moduly, aby to celé fungovalo
+
+715
+00:42:07,304 --> 00:42:10,946
+na stejné úrovni jako verze 1.0.
+
+716
+00:42:10,946 --> 00:42:15,920
+Toto API bude samozřejmě zdokumentováno
+
+717
+00:42:15,920 --> 00:42:18,986
+takže každý bude moci změnit kompiler
+
+718
+00:42:18,986 --> 00:42:22,012
+a přidat k němu nové vlastnosti
+
+719
+00:42:22,012 --> 00:42:25,657
+velice izolovaně a strukturovaně.
+
+720
+00:42:25,657 --> 00:42:29,935
+Toto API bude moci zároveň být voláno z runtime.
+
+721
+00:42:29,935 --> 00:42:34,584
+Takže si dokážete představit všechny možnosti, které to otevírá
+
+722
+00:42:34,584 --> 00:42:37,270
+bez nutnosti upravovat kompiler a související nástroje
+
+723
+00:42:37,270 --> 00:42:38,819
+při běhu programu.
+
+724
+00:42:38,819 --> 00:42:40,186
+Takže je možné při běhu
+
+725
+00:42:40,186 --> 00:42:43,657
+měnit jazyk a nebo přidávat nové vlastnosti.
+
+726
+00:42:43,657 --> 00:42:47,107
+Může to znít naprosto šíleně,
+
+727
+00:42:47,107 --> 00:42:48,494
+ale je to něco, co ostatní jazyky,
+
+728
+00:42:48,494 --> 00:42:53,525
+které se nyní vyvíjejí,
+
+729
+00:42:53,525 --> 00:42:56,184
+dělají... například jazyk Scala
+
+730
+00:42:56,184 --> 00:42:57,921
+dělá přesně toto.
+
+731
+00:42:57,921 --> 00:43:00,094
+A někteří lidé kolem Scaly
+
+732
+00:43:00,094 --> 00:43:04,242
+tyto vlastnosti používají k dělání zázraků.
+
+733
+00:43:04,242 --> 00:43:07,042
+Například, jeden chytrý chlapík
+
+734
+00:43:07,042 --> 00:43:13,634
+použil toto API, aby přidal paralelní podporu pro smyčky,
+
+735
+00:43:13,634 --> 00:43:18,648
+kdu využil GPGPU pro paralelizaci
+
+736
+00:43:18,648 --> 00:43:23,715
+za použití OpenCL coby spodní vrstvy.
+
+737
+00:43:23,715 --> 00:43:27,094
+Takže je to velicé výkoná vlastnost
+
+738
+00:43:27,094 --> 00:43:31,124
+a také tje díky tomu architektura kompileru
+
+739
+00:43:31,124 --> 00:43:37,405
+mnohem stabilnější a je mnohem jednodušší
+
+740
+00:43:37,405 --> 00:43:39,391
+přispívat s vlastním kódem a je to
+
+741
+00:43:39,391 --> 00:43:42,666
+i mnohem více strukturovanější.
+
+742
+00:43:42,666 --> 00:43:45,410
+Takže důsledkem pro současný kód kompileru...
+
+743
+00:43:45,410 --> 00:43:50,145
+v interním daigramu Redu
+
+744
+00:43:50,145 --> 00:43:53,929
+to bylo na pravé straně...
+
+745
+00:43:53,929 --> 00:43:56,942
+Současný kód v Rebolu 2
+
+746
+00:43:56,942 --> 00:44:00,594
+je jen na jedno použití.
+
+747
+00:44:00,594 --> 00:44:04,283
+Takže od začátku jsem psal velice rychle,
+
+748
+00:44:04,283 --> 00:44:08,540
+protože jsem čekal, že ten kód brzo zahodím,
+
+749
+00:44:08,540 --> 00:44:10,412
+zhruba za rok
+
+750
+00:44:10,412 --> 00:44:14,035
+a že všechno přepíšu ryche v Redu.
+
+751
+00:44:14,035 --> 00:44:18,069
+Ale postupně jsme změnili spoustu věcí
+
+752
+00:44:18,069 --> 00:44:22,374
+abychom se přizpůsobili vyvíjejícímu se prostředí.
+
+753
+00:44:22,374 --> 00:44:25,218
+Takže tohle ještě není hotovo.
+
+754
+00:44:25,218 --> 00:44:29,434
+Tudíž 1.0 bude v bootstrapované verzi
+
+755
+00:44:29,434 --> 00:44:32,590
+a 2.0 se bude hostovat sama
+
+756
+00:44:32,590 --> 00:44:35,173
+s všemi nástroji v Redu.
+
+757
+00:44:35,173 --> 00:44:41,975
+Celý runtime v Redu zůstane stejný
+
+758
+00:44:41,975 --> 00:44:43,714
+neboť je napsán Red/Systemu
+
+759
+00:44:43,714 --> 00:44:47,340
+takže bude zachován a to je spousta kódu.
+
+760
+00:44:47,340 --> 00:44:50,087
+Takže jediná část, která bude přepsána
+
+761
+00:44:50,087 --> 00:44:53,342
+bude současný kód v Rebolu 2,
+
+762
+00:44:53,342 --> 00:44:56,511
+což jsou prakticky kompilery pro Red a Red/System.
+
+763
+00:44:56,511 --> 00:44:59,654
+Jen pár slov o organizaci projektu:
+
+764
+00:44:59,654 --> 00:45:05,659
+máme dva spolupracovníky na GitHubu
+
+765
+00:45:05,659 --> 00:45:10,028
+což cnamená, že máme administrátora a další dva lidi
+
+766
+00:45:10,028 --> 00:45:15,747
+s administrátorskými právy. Takže pokud mě přejede autobus,
+
+767
+00:45:15,747 --> 00:45:21,832
+tihle dva lidé mohou převzít zdrojový kód
+
+768
+00:45:21,832 --> 00:45:26,973
+v Red repozitáři a spravovat jej.
+
+769
+00:45:26,973 --> 00:45:30,940
+Máme zhruba jedenáct přispěvovatelů
+
+770
+00:45:30,940 --> 00:45:33,673
+již od začátku. Máme mailing list.
+
+771
+00:45:33,673 --> 00:45:37,359
+Máme Facebookovou stránku, IRC kanál
+
+772
+00:45:37,359 --> 00:45:42,087
+s pěkným IRC bodem od Andrease,
+
+773
+00:45:42,087 --> 00:45:44,471
+který hlasí commity.
+
+774
+00:45:44,471 --> 00:45:46,792
+A samozřejmě hledáme další lidi
+
+775
+00:45:46,792 --> 00:45:49,389
+kteří mají zájem přispívat
+
+776
+00:45:49,389 --> 00:45:52,707
+a spolupracovat jakýmkoliv způsobem
+
+777
+00:45:52,707 --> 00:45:54,940
+neboj jde o dost velký projekt...
+
+778
+00:45:54,940 --> 00:45:58,775
+a potřebujeme spoustu pomocných rukou.
+
+779
+00:46:00,945 --> 00:46:03,564
+No a konečně :-)
+
+780
+00:46:03,564 --> 00:46:09,450
+Investoval jsem do tohoto projektu... od doby,
+
+781
+00:46:09,450 --> 00:46:12,146
+kdy jsem začal, před dvěma a půl lety...
+
+782
+00:46:12,146 --> 00:46:16,020
+každý našetřený cent, co jsem měl :-)
+
+783
+00:46:16,020 --> 00:46:20,434
+Takže tomuto projektu naprosto věřím
+
+784
+00:46:20,434 --> 00:46:22,075
+a doufám v jeho úspěch.
+
+785
+00:46:22,075 --> 00:46:27,231
+Ale peníze docházejí velice rychle :-)
+
+786
+00:46:27,231 --> 00:46:30,128
+Již rok žiji jen z darů
+
+787
+00:46:30,128 --> 00:46:33,280
+které mně posílají uživatelé a příznivci.
+
+788
+00:46:33,280 --> 00:46:35,522
+Takže bych jim rád velice poděkoval
+
+789
+00:46:35,522 --> 00:46:39,136
+neboť nebýt jich, tak bych tu teď nebyl
+
+790
+00:46:39,136 --> 00:46:41,448
+a Red by nebyl ve tomto stavu
+
+791
+00:46:41,448 --> 00:46:42,987
+nebo by patrně vůbec neexistoval
+
+792
+00:46:42,987 --> 00:46:45,865
+pokud by mě lidé nepodporovali.
+
+793
+00:46:45,865 --> 00:46:49,165
+Takže vám mnohorát děkuji a musíme pokračovat,
+
+794
+00:46:49,165 --> 00:46:52,832
+pokud chceme vše zrealizovat.
+
+795
+00:46:52,832 --> 00:46:55,053
+Děkuji všem za pozornost.
+
+796
+00:46:55,053 --> 00:46:59,053
+(potlesk)
